@@ -5,6 +5,7 @@ public class OperationsPromotionExample {
 		//연산식에서 자동 타입 변환
 		byte byteValue1 = 10;
 		byte byteValue2 = 20;
+		
 		//byte byteValue3 = byteValue1 + byteValue2;	//컴파일에러
 		int intValue1 = byteValue1 + byteValue2;
 		System.out.println(intValue1);
