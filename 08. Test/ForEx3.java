@@ -12,7 +12,7 @@ public class ForEx3 {
 			Scanner scanner = new Scanner(System.in);
 			
 			do {
-				System.out.print("점수를 입력하세요 (999점이면 프로그램을 종요합니다) : ");
+				System.out.print("점수를 입력하세요 (999점이면 프로그램을 종료합니다) : ");
 				score = scanner.nextInt();
 				if(score == 999)
 					break;	//do while의 break는 while을 나온다!!
