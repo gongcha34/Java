@@ -15,7 +15,7 @@ public class ForEx3 {
 				System.out.print("점수를 입력하세요 (999점이면 프로그램을 종료합니다) : ");
 				score = scanner.nextInt();
 				if(score == 999)
-					break;	//do while의 break는 while을 나온다!!
+					break;	// if문에서 나가는게 아니므로 do while에서 나가는 것!
 				
 				if(score > 90) 
 					rate = 1;
