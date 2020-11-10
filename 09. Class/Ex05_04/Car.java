@@ -56,8 +56,8 @@ public class Car{
 	}
 
 	public void setMaxSpeed(int maxSpeed1) {
-	if (maxSpeed1 <= 200)
-		this.maxSpeed = maxSpeed1;
+		if (maxSpeed1 <= 200)
+			this.maxSpeed = maxSpeed1;
 	}
 
 	public int getProductionYear() {
