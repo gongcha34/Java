@@ -57,10 +57,4 @@ public class Driver {
 			System.out.println("운전자 주소 : " + adress);
 			System.out.println("운전자 전화번호 : " + tel);
 		}
-		public String setDriverName(String name) {
-			return this.name = name;
-		}
-		public String setDriverTel(String tel) {
-			return this.tel = tel;
-		}
 }
