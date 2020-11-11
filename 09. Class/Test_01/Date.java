@@ -5,7 +5,7 @@ public class Date {
 	private int month;
 	private int day;
 	
-	// 생성자 유요한 값
+	// 생성자
 	public Date(){ 
 		year = 1970;
 		month = 1;
