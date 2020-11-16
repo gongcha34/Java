@@ -5,8 +5,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="Ex_02/Ex02_01/Ex02_02/Tutorial2/src"/>
-	<classpathentry kind="src" path="Ex_02/Ex02_01/src"/>
 	<classpathentry kind="src" path="Tutorial2/src"/>
 	<classpathentry kind="output" path="Ex03_01/03. Array/bin"/>
 </classpath>
