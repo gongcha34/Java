@@ -5,29 +5,6 @@ public class SpellingCheckerImpl implements Dictionary, SpellingChecker {
 	private String [] correctWords = { "칠흑", "실낙원", "고깃국", "회계연도", "test" };
 	
 	@Override
-	public String[] correction() {
-		//correcStrings 배열 만들기
-		String [] correcStrings = new String[words.length];
-		int count = 0;
-		//correctWords에 들어있는 단어일경우 correcStrings에 담기 
-		for(int i = 0; i < words.length; ++i) {
-			for(int j = 0; j < correctWords.length; j++) {
-				if(words[i].equals(correctWords[j])) {
-					correcStrings[count++] = words[i];
-					break;
-				}
-			}
-		}
-		return correcStrings;
-	}
-	
-	@Override
-	public void setWords(String[] words) {
-		this.words = words;
-
-	}
-
-	@Override
 	public String find(String word) {
 		String result = "없음"; //매개변수를 담을 String 변수 선언
 		boolean flag = false;
