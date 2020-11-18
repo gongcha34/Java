@@ -1,4 +1,5 @@
 # Java
-Java study
+> Daily Java Study
 
-데일리 자바 코드 
+# 목차
++ [Statci](https://github.com/gongcha34/Java/tree/master/12.%20static)
