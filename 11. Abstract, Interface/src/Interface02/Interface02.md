@@ -9,3 +9,5 @@
 + WordProcessor(Main)클래스에 SpellingChecker sc1 = new SpellingCheckerImpl();, Dictionary dic = (SpellingCheckerImpl) sc1; 인스턴스 생성
 + SpellingCheckerImpl 클래스 안에 find 메서드를 실행하여 Sanner 출력값에 따라 SpellingCheckerImpl에 저장된 값들을 비교한다.
 + 올바른 단어이면 그대로 출력하고, 틀린 단어이면 옳은 단어로 수정해주고 틀린 이유를 알려줌, SpellingCheckerImpl 클래스에 없는 단어이면 "저장되지 않은 단어입니다" 출력하기.
+
+# [맞춤법 프로그래밍 코드](https://github.com/gongcha34/TIL/tree/master/11.%20Abstract%2C%20Interface/src/Interface02)
