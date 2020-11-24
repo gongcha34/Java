@@ -14,9 +14,9 @@
 <code>
 	//추상 클래스
 	abstract class 클래스명 {
-    //추상 메서드
-    public abstract void 메서드명();
-  }
+		//추상 메서드
+		public abstract void 메서드명();
+	}
 </code>
 </pre>
 
@@ -32,9 +32,9 @@
 <code>
 	//인퍼페이스
 	interface 인터페이스명 {
-    //추상 메서드
-    타입 메서드명(매개변수,…);
-  }
+		//추상 메서드
+		타입 메서드명(매개변수,…);
+	}
 </code>
 </pre>
 
