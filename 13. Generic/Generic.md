@@ -11,20 +11,9 @@
 
 # 타입 매개변수의 타입 제한
 + 아래와 같이 다양하게 타입 매개변수의 타입을 제한할 수 있다.
-<pre>
-<code>
-	<T extends 수퍼클래스>
-</code>
-</pre>
 
-<pre>
-<code>
-	<T super 하위클래스>
-</code>
-</pre>
+1. <T extends 수퍼클래스>
 
-<pre>
-<code>
-	<T extends Number, V>
-</code>
-</pre>
+2. <T super 하위클래스>
+
+3. <T extends Number, V>
