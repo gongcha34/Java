@@ -56,7 +56,7 @@
 	+ hasNext()
 	+ next()
 	+ remove()
-+ ListIterator : List type 의 object 만 traverse 할 수 있다. 양방향 traverse 를 지원한다.
++ ListIterator : List type에서만 사용이 가능하다. ListIterator는 상위계층의 Iterator를 상속하며 좀 더 다양한 기능을 제공한다.
 	+ add()
 	+ hasNext()
 	+ next()
