@@ -34,5 +34,62 @@
 + 클래스 메서드는 인스턴스 변수를 사용할 수 없다.
 + 메서드 내에서 인스턴스 변수를 사용하지 않는다면, static을 붙이는 것을 고려한다.
 
+<pre>
+<code>
+class MemberCall{
+    int iv = 10;
+    static int cv = 20;
+
+    int iv2 = cv;
+    /* static int cv2 = iv;  
+    non-static variable iv cannot be referenced from a static context */
+    static int cv2 = new MemberCall().iv;
+
+    static void staticMethod1() {
+      System.out.println(cv);
+      // System.out.println(iv); 클래스 메서드에 인스턴스 변수 사용 불가
+      MemberCall c = new MemberCall();
+      System.out.println(c.iv);
+    }
+
+    void instanceMethod1() {
+      System.out.println(cv);
+      System.out.println(iv);
+    }
+
+    static void staticMethod2() {
+      staticMethod1();
+      // instanceMethod1(); 클래스메서드에 인스턴스메서드 호출 불가
+      MemberCall c = new MemberCall();
+      c.instanceMethod1();
+    }
+
+    void instanceMethod2() {
+      staticMethod1();
+      instanceMethod1();
+    }
+
+}
+</code>
+</pre>
+
+# 오버로딩
+> 자바에서는 한 클래스 내에 이미 사용하려는 이름과 같은 이름을 가진 메서드가 있더라도 매개변수의 개수와 타입이 다르면 같은 이름을 사용해서 메서드를 정의할 수 있다
+
+오버로딩 조건
+1. 메서드는 이름이 같아야 한다.
+2. 매개변수 개수 또는 타입이 달라야 한다.
+
+(주의) 반환타입은 오버로딩에 영향을 주지 않는다.
+
+오버로딩의 장점은 이름 짓기가 쉽고 기억하기 편리하며, 오류 가능성을 줄일 수 있다.
+
+# 가변인자 (Variable arguments)
+> 매개 변수의 개수를 동적으로 지정할 수 있다.
+
+(주의) 
+1. 가변인자는 제일 마지막에 선언되어야 한다.
+2. 오버로딩된 메서드가 구분이 안될 경우 컴파일에러가 발생한다. (가변인자를 사용한 메서드는 오버로딩하지 않는 것이 좋다.)
+
 # *Reference
 + [Java의 정석](http://www.yes24.com/Product/Goods/24259565?OzSrank=1)
