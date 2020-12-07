@@ -20,20 +20,20 @@
 <pre>
 <code>
 	System.out.println("숫자를 하나 입력하세요.>");
-		
-		Scanner scanner = new Scanner (System.in);
-		
-		String tmp = scanner.nextLine();
-		input = Integer.parseInt(tmp);
-		
-		if(input == 0) {
-			System.out.println("입력하신 숫자는 0입니다.");
-		}
-		
-		if(input != 0) {
-			System.out.println("입력하신 숫자는 0이 아닙니다.");
-			System.out.printf("입력하신 숫자는 %d입니다.",input);
-		}
+
+	Scanner scanner = new Scanner (System.in);
+
+	String tmp = scanner.nextLine();
+	input = Integer.parseInt(tmp);
+
+	if(input == 0) {
+		System.out.println("입력하신 숫자는 0입니다.");
+	}
+
+	if(input != 0) {
+		System.out.println("입력하신 숫자는 0이 아닙니다.");
+		System.out.printf("입력하신 숫자는 %d입니다.",input);
+	}
 </code>
 </pre>
 
@@ -100,35 +100,35 @@
 
 #### switch문의 중첩
 + if문처럼 switch문도 중첩이 가능하다. 한 가지 주의할 점은 중첩 switch문에서 break문을 빼지 않게 조심하자.
-    <pre>
+<pre>
     <code>
-            System.out.println("당신의 주민번호를 입력하세요. (011234-111222) >");
-            Scanner scanner = new Scanner(System.in);
-            String regNo = scanner.nextLine();
-            char gender = regNo.charAt(7); // 입력받은 번호의 8번째 문자를 gender에 저장
-            
-            switch(gender) {
-                case '1': case '3':
-                    switch(gender) {
-                    case '1':
-                        System.out.println("당신은 2000년 이전에 출생한 남자입니다.");
-                        break;
-                    case '3':
-                        System.out.println("당신은 2000년 이후에 출생한 남자입니다.");
-                    }
-                    break; // 이 break를 빼먹지 않도록 주의
-                case '2': case '4':
-                    switch(gender) {
-                    case '2':
-                        System.out.println("당신은 2000년 이전에 출생한 여자입니다.");
-                        break;
-                    case '4':
-                        System.out.println("당신은 2000년 이후에 출생한 여자입니다.");
-                    }
-                    break; // 이 break를 빼먹지 않도록 주의
-                default:
-                    System.out.println("유효하지 않은 주민등록번호입니다");
-            }
+    System.out.println("당신의 주민번호를 입력하세요. (011234-111222) >");
+    Scanner scanner = new Scanner(System.in);
+    String regNo = scanner.nextLine();
+    char gender = regNo.charAt(7); // 입력받은 번호의 8번째 문자를 gender에 저장
+
+    switch(gender) {
+	case '1': case '3':
+	    switch(gender) {
+	    case '1':
+		System.out.println("당신은 2000년 이전에 출생한 남자입니다.");
+		break;
+	    case '3':
+		System.out.println("당신은 2000년 이후에 출생한 남자입니다.");
+	    }
+	    break; // 이 break를 빼먹지 않도록 주의
+	case '2': case '4':
+	    switch(gender) {
+	    case '2':
+		System.out.println("당신은 2000년 이전에 출생한 여자입니다.");
+		break;
+	    case '4':
+		System.out.println("당신은 2000년 이후에 출생한 여자입니다.");
+	    }
+	    break; // 이 break를 빼먹지 않도록 주의
+	default:
+	    System.out.println("유효하지 않은 주민등록번호입니다");
+    }
     </code>
 </pre>
 
@@ -206,17 +206,17 @@
 <pre>
     <code>
         // for문에 Loop1이라는 이름을 붙였다.
-        		Loop1 : for(int i = 2; i <= 9; i++) {
-        			for(int j = 1; j <= 9; j++) {
-        				if(j==5)
-        					break Loop1;
-        					//break;
-        					//continue Loop1;
-        					//continue;
-        				System.out.println(i + "*" + j + "=" + i*j);
-        			}
-        			System.out.println();
-        		}
+	Loop1 : for(int i = 2; i <= 9; i++) {
+		for(int j = 1; j <= 9; j++) {
+			if(j==5)
+				break Loop1;
+				//break;
+				//continue Loop1;
+				//continue;
+			System.out.println(i + "*" + j + "=" + i*j);
+		}
+		System.out.println();
+	}
     </code>
 </pre>
 
