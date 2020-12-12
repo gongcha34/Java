@@ -1,14 +1,24 @@
-공사중....:see_no_evil:
+지금은 공사중입니다....:see_no_evil:
 
-# TIL
-> Daily  Study
+# Today I Learned
++ 오늘 하루동안 학습한 내용과 코드를 기록합니다
 
 # Java
-+ [Abstract, Interface]()
++ [변수]()
++ [연산자]()
++ [조건문과 반복문]()
++ [배열]()
++ [객체지향 프로그래밍 Ⅰ]()
+  + 객체지향언어, 클래스와 객체, 변수와 메서드, 오버로딩, 생성자, 변수의 초기화
++ [객체지향 프로그래밍 Ⅱ]()
+  +상속, 오버라이딩, package와 import, 제어자, 다형성, 추상클래스, 인터페이스, 내부 클래스
++ 예외처리
++ 컬렉션 프레임워크
++ 제네릭스, 열거형, 애너테이션
++ 람다식
++ 프로그래밍
   + [맞춤법 검사기 프로그래밍]()
-+ [Static]()
-+ [Generic]()
-+ [Lamda]()
-+ [NestedClass]()
-+ [Collection framework]()
-+ [Map Collection framework]()
+  
+# JavaScript
+
+# Database
