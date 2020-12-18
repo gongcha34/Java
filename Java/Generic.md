@@ -58,13 +58,77 @@ Box<T>에서 T를 '타입 변수(type variable)'라고 하며 'Type'의 첫글�
 	</code>
 </pre>
 
-
 ## 제한된 지네릭 클래스
 + 지네릭 타입에 'extends'를 사용하면, 특정 타입의 자손들만 대입할 수 있게 제한할 수 있다.
 + 한 클래스의 자손들만 담을 수 있다는 제한이 더 추가된 것이다.
 + 만일 클래스가 아니라 인터페이스를 구현해야 한다는 제약이 필요하다면, 이때도 'extends'를 사용한다. 'implements'를 사용하지 않는 다는 점에 주의하자.
 + 클래스의 자손이면서 인터페이스도 구현해야한다면 '&'기호로 연결한다.
 
+## 와일드 카드
+> 지네릭 타입이 달른 것만으로는 옵버로딩이 성립하지 않는다.
+> 와일드 카드는 기호 '?'로 표현하며 어떠한 타입도 될 수 있다.
+> '?'만으로는 Object타입과 다를 게 없으므로, 다음과 같이 'extends'와 'super'로 상한과 하한을 제한할 수 있다.
+
+<pre>
+	<code>
+		class Fruit {public String toString() {return "Fruit";}}
+		class Apple extends Fruit {public String toString() {return "Apple";}}
+		class Grape extends Fruit {public String toString() {return "Grape";}}
+
+		class Juice {
+			String name;
+
+			Juice(String name){
+				this.name = name + "Juice";
+			}
+
+			public String toString() {return name;}
+		}
+
+		class Juicer {
+			static Juice makeJuice(FruitBox<? extends Fruit> box) {
+
+				String tmp = "";
+
+				for(Fruit f : box.getList())
+					tmp += f + " ";
+
+				return new Juice(tmp);
+			}
+		}
+
+		public class FruitBoxEx3 {
+			public static void main(String[] args) {
+				FruitBox<Fruit> fruitbox = new FruitBox<>();
+				FruitBox<Apple> applebox = new FruitBox<>();
+
+				fruitbox.add(new Fruit());
+				fruitbox.add(new Apple());
+				fruitbox.add(new Grape());
+				applebox.add(new Apple());
+				applebox.add(new Apple());
+ff
+				System.out.println(Juicer.makeJuice(fruitbox));
+				System.out.println(Juicer.makeJuice(applebox));
+
+
+			}
+		}
+
+		class FruitBox<T extends Fruit> extends Box<T> {}
+
+		class Box<T> {
+
+			ArrayList<T> list = new ArrayList<T>();
+			void add(T item) { list.add(item); }
+			T get(int i) { return list.get(i); }
+			ArrayList<T> getList() { return list; }
+			int size() { return list.size(); }
+			public String toString() { return list.toString(); }
+
+		}
+	</code>
+</pre>
 
 # *Reference
 + [이것이자바다]
