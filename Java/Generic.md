@@ -107,11 +107,8 @@ Box<T>에서 T를 '타입 변수(type variable)'라고 하며 'Type'의 첫글�
 				fruitbox.add(new Grape());
 				applebox.add(new Apple());
 				applebox.add(new Apple());
-ff
 				System.out.println(Juicer.makeJuice(fruitbox));
 				System.out.println(Juicer.makeJuice(applebox));
-
-
 			}
 		}
 
@@ -129,6 +126,54 @@ ff
 		}
 	</code>
 </pre>
+
+
+# 2. 열거형
+> 서로 관련된 상수를 편리하게 선언하기 위한 것으로 여러 상수를 정의할 때 사용하면 유용하다.
+
+자바의 열거형은 값뿐만 아니라 타입까지 체크하기 때문에 타입에 안전하다고 할 수 있다.
+<pre>
+	<code>
+		Direction d1 = Direction.EAST;
+		Direction d2 = Direction.valueOf("WEST");
+		Direction d3 = Enum.valueOf(Direction.class, "EAST");
+		
+		System.out.println("d1="+ d1);
+		System.out.println("d2="+ d2);
+		System.out.println("d3="+ d3);
+
+		System.out.println("d1==d2 ? " + (d1==d2));
+		System.out.println("d1==d3 ? " + (d1==d3));
+		System.out.println("d1.equals(d3) ?" + d1.equals(d3));
+		// System.out.println("d2 > d3 ? " + (d2 > d3));  // 에러
+		System.out.println("d1.compareTo(d3) ? " + (d1.compareTo(d3)));
+		System.out.println("d1.compareTo(d2) ? " + (d1.compareTo(d2)));
+		
+		switch(d1) {
+			case EAST: // Direction.EAST라고 쓸 수 없다.
+				System.out.println("The direction is EAST.");
+				break;
+			case SOUTH: // Direction.SOUTH라고 쓸 수 없다.
+				System.out.println("The direction is SOUTH.");
+				break;
+			case WEST: // Direction.WEST라고 쓸 수 없다.
+				System.out.println("The direction is WEST.");
+				break;
+			case NORTH: // Direction.NORTH라고 쓸 수 없다.
+				System.out.println("The direction is NORTH.");
+				break;
+			default :
+				System.out.println("Invalid direction");
+				break;
+		}
+		
+		Direction[] dArr = Direction.values();
+		for (Direction d : dArr) {
+			System.out.printf("%s=%s%n",d.name(), d.ordinal());
+		}
+	</code>
+</pre>
+
 
 # *Reference
 + [이것이자바다]
