@@ -4,8 +4,21 @@
 > 제네릭스를 통해 타입 안정성을 제공한다. 타입체크와 형변환을 생략할 수 있으므로 코드가 간결해진다.
 
 클래스를 만들 때 데이터 타입별로 만들어야 하는 단점이 있다. 이럴경우 Object 클래스로 만들면 해결되지만 데이터 타입을 보장하지 않는다는 단점이 있다.
-이때 제네릭 클래스를 적용하면 데이터 타입을 보장하며 문제를 해결할 수 !
+이때 제네릭 클래스를 적용하면 데이터 타입을 보장하며 문제를 해결할 수 있다!
 
+## 지네릭 타입과 다형성
++ 참조 변수와 생성자의 대입된 타입은 일치해야 한다.
+	+ ArrayList<Tv> list = new ArrayList<Tv>();
+	+ ArrayList<Product> list = new ArrayList<Tv>(); // 에러!
++ 지네릭 클래스간의 다형성은 성립 (여전히 대입된 타입은 일치해야 함)
+	+ List<Tv> = new ArrayList<Tv>();
+	+ List<Tv> = new LinkedList<Tv>();
++ 매개변수의 다형성도 성립.
+	+ ArrayList<Product> list = new ArrayList<Product>();
+	+ list.add(new Product());
+	+ list.add(new Tv());
+	+ list.add(new Audio());
+	
 <pre>
 	<code>
 		class Box<T> {	//지네릭 타입 T를 선언
@@ -127,6 +140,8 @@ Box<T>에서 T를 '타입 변수(type variable)'라고 하며 'Type'의 첫글�
 	</code>
 </pre>
 
+## 지네릭 메서드와 와일드 카드
+> 와일드 카드는 하나의 참조 변수로 서로 다른 타입이 대입된 여러 지네릭 객체를 다루기 위한 것이고, 지네릭 메서드는 메서드를 호출할 때마다 다른 지네릭 타입을 대입할 수 있게 한 것.
 
 # 2. 열거형
 > 서로 관련된 상수를 편리하게 선언하기 위한 것으로 여러 상수를 정의할 때 사용하면 유용하다.
