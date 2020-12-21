@@ -20,30 +20,8 @@ Box<T>에서 T를 '타입 변수(type variable)'라고 하며 'Type'의 첫글�
 	
 ## 지네릭 타입과 다형성
 + 참조 변수와 생성자의 대입된 타입은 일치해야 한다.
-
-<pre>
-	<code>
-		// ArrayList <Tv> list = new ArrayList <Tv>();
-		// ArrayList<Product> list = new ArrayList<Tv>(); // 에러!
-	</code>
-</pre>
-
 + 지네릭 클래스간의 다형성은 성립 (여전히 대입된 타입은 일치해야 함)
-<pre>
-	<code>
-		// List<Tv> = new ArrayList<Tv>();
-		// List<Tv> = new LinkedList<Tv>();
-	</code>
-</pre>
 + 매개변수의 다형성도 성립.
-<pre>
-	<code>
-		// ArrayList<Product> list = new ArrayList<Product>();
-		// list.add(new Product());
-		// list.add(new Tv());
-		// list.add(new Audio());
-	</code>
-</pre>
 	
 ## 실습 
 
