@@ -6,19 +6,6 @@
 클래스를 만들 때 데이터 타입별로 만들어야 하는 단점이 있다. 이럴경우 Object 클래스로 만들면 해결되지만 데이터 타입을 보장하지 않는다는 단점이 있다.
 이때 제네릭 클래스를 적용하면 데이터 타입을 보장하며 문제를 해결할 수 있다!
 
-## 지네릭 타입과 다형성
-+ 참조 변수와 생성자의 대입된 타입은 일치해야 한다.
-	+ ArrayList<Tv> list = new ArrayList<Tv>();
-	+ ArrayList<Product> list = new ArrayList<Tv>(); // 에러!
-+ 지네릭 클래스간의 다형성은 성립 (여전히 대입된 타입은 일치해야 함)
-	+ List<Tv> = new ArrayList<Tv>();
-	+ List<Tv> = new LinkedList<Tv>();
-+ 매개변수의 다형성도 성립.
-	+ ArrayList<Product> list = new ArrayList<Product>();
-	+ list.add(new Product());
-	+ list.add(new Tv());
-	+ list.add(new Audio());
-	
 <pre>
 	<code>
 		class Box<T> {	//지네릭 타입 T를 선언
@@ -29,8 +16,37 @@
 		}
 	</code>
 </pre>
-
 Box<T>에서 T를 '타입 변수(type variable)'라고 하며 'Type'의 첫글자에서 따온 것인다, ArrayList<E>의 경우, 타입 변수 E는 'Element(요소)'의 첫 글자를 따서 사용했다.
+	
+## 지네릭 타입과 다형성
++ 참조 변수와 생성자의 대입된 타입은 일치해야 한다.
+
+<pre>
+	<code>
+		// ArrayList<Tv> list = new ArrayList<Tv>();
+		// ArrayList<Product> list = new ArrayList<Tv>(); // 에러!
+	</code>
+</pre>
+
++ 지네릭 클래스간의 다형성은 성립 (여전히 대입된 타입은 일치해야 함)
+<pre>
+	<code>
+		// List<Tv> = new ArrayList<Tv>();
+		// List<Tv> = new LinkedList<Tv>();
+	</code>
+</pre>
++ 매개변수의 다형성도 성립.
+<pre>
+	<code>
+		// ArrayList<Product> list = new ArrayList<Product>();
+		// list.add(new Product());
+		// list.add(new Tv());
+		// list.add(new Audio());
+	</code>
+</pre>
+	
+## 실습 
+
 <pre>
 	<code>
 		class Fruit {public String toString() {return "Fruit";}}
