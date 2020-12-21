@@ -23,7 +23,7 @@ Box<T>에서 T를 '타입 변수(type variable)'라고 하며 'Type'의 첫글�
 
 <pre>
 	<code>
-		// ArrayList<Tv> list = new ArrayList<Tv>();
+		// ArrayList <Tv> list = new ArrayList <Tv>();
 		// ArrayList<Product> list = new ArrayList<Tv>(); // 에러!
 	</code>
 </pre>
