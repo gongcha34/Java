@@ -95,6 +95,44 @@ WHERE ENAME LIKE '_L%';
 > 합집합을 의미하는 연산자입니다.
 > 주의할 점은 SELECT문이 출력하려는 열 개수와 각 열의 자료형이 순서별로 일치해야 합니다.
 
+## 오라클 함수
+### 문자 데이터를 가공하는 문자 함수
+함수 | 설명 
+------------ | ------------- 
+UPPER(문자열) | 괄호 안 문자 데이터를 모두 대문자로 변환하여 반환 
+LOWER(문자열) | 괄호 안 문자 데이터를 모두 소문자로 변환하여 반환 
+INITCAP(문자열) | 괄호 안 문자 데이터 중 첫 글자는 대문자로, 나머지 문자를 소문자로 변환 후 반환
+
+```
+SELECT *
+FROM 게시판테이블
+WHERE 게시판 제목 열 LIKE '&Oracle%'
+OR 게시판 본문 열 LIKE '&Oracle%';  
+
+/* SCOTT인 데이터 찾기 */
+SELECT *
+FROM EMP
+WHERE UPPER(ENAME) = UPPER('scott');
+
+/* SCOTT 단어를 포함한 데이터 찾기 */
+SELECT *
+FROM EMP
+WHERE UPPER(ENAME) LIKE UPPER('%scott%');
+```
+
+### 문자열 길이를 구하는 LENGTH 함수
+### 문자열 일부를 추출하는 SUBSTR 함수
+```
+SELECT JOB, SUBSTR(JOB,1,2), SUBSTR(JOB,3,2), SUBSTR(JOB,5) FROM EMP;
+```
+### 문자열 안에서 특정 문자 위치를 찾는 INSTR 함수
+```
+INSTR([대상 문자열 데이터(필수)],
+  [위치를 찾으려는 부분 문자(필수)],
+  [위치 찾기를 시작할 대상 문자열 데이터 위치(선택, 기본값은 1)],
+  [시작 위치에서 찾으려는 문자가 몇 번째인지 지정(선택, 기본값은1)]
+)
+```
 
 # *Reference
 + [오라클로 배우는 데이터베이스 입문](http://www.yes24.com/Product/Goods/65849798)
