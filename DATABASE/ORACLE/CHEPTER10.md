@@ -16,7 +16,7 @@ INSERT INTO DEPT_TEMP (DEPTNO, DNAME, LOC) VALUES (50, 'database', 'seoul');
 INSERT INTO DEPT_TEMP VALUES (60,'network', 'busan');
 ```
 
-#### 특정한 값이 없을 때 NULL값을 넣을 수 있다 
++ 특정한 값이 없을 때 NULL값을 넣을 수 있다 
 > 이때 테이블에 NULLABLE이 YES로 되어있어야 한다.
 
 ```
@@ -25,7 +25,7 @@ INSERT INTO DEPT_TEMP VALUES (80, 'mobile', '');
 INSERT INTO DEPT_TEMP (DEPTNO, LOC) VALUES (90, 'incheon');
 ```
 
-#### 테이블에 날짜 데이터 입력하기
++ 테이블에 날짜 데이터 입력하기
 ```
 CREATE TABLE EMP_TEMP AS SELECT * FROM EMP;
 SELECT * FROM EMP_TEMP;
@@ -34,7 +34,7 @@ INSERT INTO EMP_TEMP VALUES(1112, 'KIM2', 'SALESMAN', 7839, TO_DATE('07/01/2020'
 INSERT INTO EMP_TEMP VALUES(1113, 'KIM3', 'MANAGER', 7839, SYSDATE, 4000, NULL, 30);
 ```
 
-#### 서브쿼리를 사용하여 한 번에 여러 데이터 추가하기
++ 서브쿼리를 사용하여 한 번에 여러 데이터 추가하기
 ```
 INSERT INTO EMP_TEMP SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO
 FROM EMP JOIN SALGRADE
@@ -53,22 +53,22 @@ WHERE DEPNO = 70;
 UPDATE DEPT_TEMP SET DNAME = 'OP', LOC = 'BO' WHERE DEPTNO = 40;
 ```
 
-#### 수정한 내용을 되돌리고 싶을 때
++ 수정한 내용을 되돌리고 싶을 때
 ```
 ROLLBACK;
 ```
-#### 수정한 내용값을 고정하고 싶을 때 커밋후 롤백해도 이전 데이터값으로 되돌릴 수 없다.
++ 수정한 내용값을 고정하고 싶을 때 커밋후 롤백해도 이전 데이터값으로 되돌릴 수 없다.
 ```
 COMMIT;
 ```
-#### 서브쿼리를 통해 데이터 값 변경
++ 서브쿼리를 통해 데이터 값 변경
 ```
 UPDATE dept_temp SET (DNAME, LOC) = (SELECT DNAME, LOC
 FROM DEPT WHERE DEPTNO = 40)
 WHERE DEPTNO = 40;
 ```
 
-#### 서브쿼리로 데이터 일부분 수정하기
++ 서브쿼리로 데이터 일부분 수정하기
 ```
 UPDATE DEPT_TEMP SET DNAME = (SELECT DNAME FROM DEPT WHERE DEPTNO = 40), LOC = (SELECT LOC FROM DEPT WHERE DEPTNO = 40)
 WHERE DEPTNO = 40;
@@ -83,7 +83,7 @@ SELECT * FROM DEPT_TEMP;
 ROLLBACK;
 DELETE FROM DEPT_TEMP WHERE DEPTNO = 40;
 ```
-#### 데이터 일부분만 삭제하기
++ 데이터 일부분만 삭제하기
 ```
 SELECT * FROM EMP_TEMP;
 
@@ -94,12 +94,12 @@ DELETE FROM EMP_TEMP WHERE EMPNO IN (SELECT EMPNO FROM EMP JOIN SALGRADE
 ON SAL BETWEEN LOSAL AND HISAL
 WHERE GRADE = 3 AND DEPTNO = 30);
 ```
-#### 테이블 데이터 삭제
++ 테이블 데이터 삭제
 ```
 DELETE FROM EMP_TEMP;
 TRUNCATE TABLE EMP_TEMP;
 ```
-#### 테이블 완전 삭제
++ 테이블 완전 삭제
 > 테이블의 모든 데이터 및 구조를 삭제한다
 ```
 DROP TABLE EMP_TEMP2; 
