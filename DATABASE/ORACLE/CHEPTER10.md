@@ -94,11 +94,52 @@ DELETE FROM EMP_TEMP WHERE EMPNO IN (SELECT EMPNO FROM EMP JOIN SALGRADE
 ON SAL BETWEEN LOSAL AND HISAL
 WHERE GRADE = 3 AND DEPTNO = 30);
 ```
-### 테이블 전체 삭제
+### 테이블 데이터 삭제
 ```
 DELETE FROM EMP_TEMP;
 TRUNCATE TABLE EMP_TEMP;
 ```
+### 테이블 완전 삭제
+> 테이블의 모든 데이터 및 구조를 삭제한다
+```
+DROP TABLE EMP_TEMP2; 
+```
+## 수정 중인 데이터 접근을 막는 LOCK
+> 트랜젝션과 세션을 이해후 LOCK 개념을 잘 알아 두어야 한다.
+> 특정 세션에서 조작중인 데이터는 트랜잭션이 완료(COMMIT, ROLLBACK)되기 전까지 다른 세션에서 조작할 수 없는 상태가 된다.
+> 특정 세션에서 데이터 조작이 완료될 때까지 다른 세션에서 해당 데이터 조작을 기다리는 현상을 HANG(행)이라고 한다.
+
+```
+CREATE TABLE DEPT_TCL AS SELECT * FROM DEPT;
+SELECT * FROM DEPT_TCL;
+
+/* INSERT , UPDATE, DELETE 실행하기 */
+INSERT INTO dept_tcl VALUES (50,'DATABASE','SEOUL');
+UPDATE dept_tcl SET LOC = 'BUSAN' WHERE DEPTNO = 40;
+DELETE dept_tcl WHERE DNAME = 'RESEARCH';
+SELECT * FROM dept_tcl;
+
+/*INSERT , UPDATE, DELETE를 동시에 실행 후 롤백을 하면 INSERT , UPDATE, DELETE, SELECT 전체 값이 수정전으로 되돌아간다.*/
+ROLLBACK;
+
+/*INSERT , UPDATE를 먼저 실행 후 DELETE를 하면 ROLLBACK, COMMIT시 DELETE는 수정전으로 되돌아가고 INSERT , UPDATE는 영구히 저장된다. */
+DELETE dept_tcl WHERE deptno = 50;
+
+/* 
+    다른 세션에 변경된 값을 반영하려면 COMMIT을 꼭 해야한다 
+    다른 사용자가 변경된 내용을 확인하려면 먼저 실행한 세션에서 COMMIT을 꼭 해줘야 한다.
+*/
+COMMIT;
+
+/*
+    실행한 세션에서 UPDATE DEPT_TCL SET LOC = 'SEOUL2' WHERE DEPTNO = 30;을 실행하면 LOCK이 걸리고
+    다른 세션들은 작업을 할 수 없게 된다. 이때 COMMIT을 해야만 ROCK이 풀린다.
+*/
+
+UPDATE DEPT_TCL SET LOC = 'SEOUL2' WHERE DEPTNO = 30;
+COMMIT;
+```
+
 
 # *Reference
 + [오라클로 배우는 데이터베이스 입문](http://www.yes24.com/Product/Goods/65849798)
