@@ -1,5 +1,5 @@
 # 테이터를 추가, 수정, 삭제하는 데이터 조작어
-## 테이블 생성하기
+## 1. 테이블 생성하기
 ```
 CREATE TABLE DEPT_TEMP AS SELECT * FROM DEPT;
 SELECT * FROM DEPT_TEMP;
@@ -42,7 +42,7 @@ ON SAL BETWEEN LOSAL AND HISAL
 WHERE GRADE = 1;
 ```
 
-## 테이블에 있는 데이터 수정하기
+## 2. 테이블에 있는 데이터 수정하기
 ```
 SELECT * FROM DEPT_TEMP;
 UPDATE DEPT_TEMP SET LOC = 'SEOUL';
@@ -77,7 +77,7 @@ UPDATE DEPT_TEMP SET LOC = 'SEOUL2'
 WHERE DEPTNO = (SELECT DEPTNO FROM DEPT_TEMP WHERE DNAME = 'DATABASE');
 ```
 
-## 테이블에 있는 데이터 삭제하기
+## 3. 테이블에 있는 데이터 삭제하기
 ```
 SELECT * FROM DEPT_TEMP;
 ROLLBACK;
@@ -104,7 +104,7 @@ TRUNCATE TABLE EMP_TEMP;
 ```
 DROP TABLE EMP_TEMP2; 
 ```
-## 수정 중인 데이터 접근을 막는 LOCK
+## 4. 수정 중인 데이터 접근을 막는 LOCK
 > 트랜젝션과 세션을 이해후 LOCK 개념을 잘 알아 두어야 한다.
 > 특정 세션에서 조작중인 데이터는 트랜잭션이 완료(COMMIT, ROLLBACK)되기 전까지 다른 세션에서 조작할 수 없는 상태가 된다.
 > 특정 세션에서 데이터 조작이 완료될 때까지 다른 세션에서 해당 데이터 조작을 기다리는 현상을 HANG(행)이라고 한다.
