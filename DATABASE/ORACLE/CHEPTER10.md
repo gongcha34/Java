@@ -11,7 +11,7 @@ DESC DEPT_TEMP;
 ```
 INSERT INTO DEPT_TEMP (DEPTNO, DNAME, LOC) VALUES (50, 'database', 'seoul');
 ```
-### column이 생략 가능해서 더 간략하게 표현 가능
+> COLUMN이 생략 가능해서 더 간략하게 표현 가능하다.
 ```
 INSERT INTO DEPT_TEMP VALUES (60,'network', 'busan');
 ```
@@ -43,6 +43,5 @@ WHERE GRADE = 1;
 ```
 
 # *Reference
-+ []()
-
++ [오라클로 배우는 데이터베이스 입문](http://www.yes24.com/Product/Goods/65849798)
 
