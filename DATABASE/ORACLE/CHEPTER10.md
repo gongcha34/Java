@@ -172,7 +172,53 @@ WITH E AS (SELECT * FROM EMP ORDER BY SAL DESC)
 SELECT ROWNUM, E.* FROM E
 WHERE ROWNUM <= 3;
 ```
+### 13-4. 규칙에 따라 순번을 생성하는 시퀀스
+> 시퀀스란 특정 규칙에 맞는 연속 숫자를 생성하는 객체이다.
++ 시퀀스 생성하기
+```
+CREATE SEQUENCE 시퀀스 이름 START WITH (숫자);
 
+CREATE SEQUENCE SEQ_DEPT_SEQUENCE
+INCREMENT BY 10
+START WITH 10;
+```
++ 생성한 시퀀스 확인하기
+```
+SELECT * FROM SEQ_DEPT_SEQUENCE;
+```
++ 시퀀스에서 생성한 순번을 사용한 INSERT문 실행하기
+```
+INSERT INTO DEPT_SEQUENCE (DEPTNO, DNAME, LOC)
+VALUES (SEQ_DEPT_SEQUENCE.NEXTVAL, 'DATABASE', 'SEOUL');
+
+SELECT * FROM DEPT_SEQUENCE ORDER BY DEPTNO;
+```
++ 가장 마지막으로 생성된 시퀀스 확인하기
+```
+SELECT SEQ_DEPT_SEQUENCE.CURRVAL 
+FROM DUAL;
+```
++ 시퀀스 수정
+```
+ALTER SEQUENCE 시퀀스 이름
+[INCREMENT BY N];
+```
++ 시퀀스 삭제
+```
+DROP SEQUENCE 시퀀스 이름;
+```
+
++ 12g 이후 시퀀스 문법
+```
+CREATE TABLE DEPT_SEQ(
+    DEPTNO NUMBER GENERATED AS IDENTITY,
+    DNAME VARCHAR2(14),
+    LOC VARCHAR2(13)
+);
+
+INSERT INTO DEPT_SEQ (DNAME, LOC) VALUES ('DATABASE', 'SEOUL');
+SELECT * FROM DEPT_SEQ;
+```
 
 # *Reference
 + [오라클로 배우는 데이터베이스 입문](http://www.yes24.com/Product/Goods/65849798)
