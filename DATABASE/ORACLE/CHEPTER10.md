@@ -104,6 +104,7 @@ TRUNCATE TABLE EMP_TEMP;
 ```
 DROP TABLE EMP_TEMP2; 
 ```
+# 트랜잭션 제어와 
 ### 4. 수정 중인 데이터 접근을 막는 LOCK
 > 트랜젝션과 세션을 이해후 LOCK 개념을 잘 알아 두어야 한다.
 > 특정 세션에서 조작중인 데이터는 트랜잭션이 완료(COMMIT, ROLLBACK)되기 전까지 다른 세션에서 조작할 수 없는 상태가 된다.
@@ -139,7 +140,8 @@ COMMIT;
 UPDATE DEPT_TCL SET LOC = 'SEOUL2' WHERE DEPTNO = 30;
 COMMIT;
 ```
-### 5. 테이블처럼 사용하는 뷰
+# 객체 종류
+### 13-3. 테이블처럼 사용하는 뷰
 > 흔히 가상 테이블로 부르는 뷰는 하나 이상의 테이블을 조회하는 SELECT문을 저장한 객체를 뜻한다.
 ```
 CREATE VIEW EMP_VIEW AS
