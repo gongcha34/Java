@@ -139,12 +139,8 @@ COMMIT;
 UPDATE DEPT_TCL SET LOC = 'SEOUL2' WHERE DEPTNO = 30;
 COMMIT;
 ```
-### 테이블처럼 사용하는 뷰
-> SCOTT 계정은 뷰 생성 권한이 없으므로 SYSTEM 계정으로 접속한 후 다음 명령어를 사용하여 SCOTT 계정에 권한을 부여해야 한다.
-```
-GRANT CREATE VIEW TO SCOTT;
-```
-흔히 가상 테이블로 부르는 뷰는 하나 이상의 테이블을 조회하는 SELECT문을 저장한 객체를 뜻한다.
+### 5. 테이블처럼 사용하는 뷰
+> 흔히 가상 테이블로 부르는 뷰는 하나 이상의 테이블을 조회하는 SELECT문을 저장한 객체를 뜻한다.
 ```
 CREATE VIEW EMP_VIEW AS
 SELECT EMPNO, ENAME, JOB, DEPTNO FROM EMP WHERE DEPTNO = 20;
@@ -152,6 +148,10 @@ SELECT EMPNO, ENAME, JOB, DEPTNO FROM EMP WHERE DEPTNO = 20;
 SELECT * FROM EMP_VIEW;
 -- 뷰 삭제
 DROP VIEW EMP_VIEW;
+```
+> SCOTT 계정은 뷰 생성 권한이 없으므로 SYSTEM 계정으로 접속한 후 다음 명령어를 사용하여 SCOTT 계정에 권한을 부여해야 한다.
+```
+GRANT CREATE VIEW TO SCOTT;
 ```
 + 인라인 뷰
 ```
