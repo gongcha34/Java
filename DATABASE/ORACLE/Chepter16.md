@@ -326,7 +326,7 @@ END;
 ```
 
 # 18. 커서와 예외 처리
-## 단일행
++ 단일행
 ```
 DECLARE
     RECS DEPT%ROWTYPE;
