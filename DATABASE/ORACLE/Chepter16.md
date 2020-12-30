@@ -242,6 +242,96 @@ END;
 SELECT * FROM DEPT;
 ```
 
+## 17-2 자료형이 같은 여러 데이터를 저장하는 컬렉션
+### 연관 배열
+```
+SET SERVEROUTPUT ON;
+DECLARE
+    TYPE EX IS TABLE OF VARCHAR2(20)
+    INDEX BY PLS_INTEGER;
+    TEXTS EX;
+BEGIN
+    TEXTS(1) := '1st data';
+    TEXTS(2) := '2nd data';
+    TEXTS(3) := '3rd data';
+    TEXTS(4) := '4th data';
+    
+    DBMS_OUTPUT.PUT_LINE('TEXTS(1): ' || TEXTS(1));
+    DBMS_OUTPUT.PUT_LINE('TEXTS(2): ' || TEXTS(2));
+    DBMS_OUTPUT.PUT_LINE('TEXTS(3): ' || TEXTS(3));
+    DBMS_OUTPUT.PUT_LINE('TEXTS(4): ' || TEXTS(4));
+END;
+/
+```
+### 레코드
+```
+-- RECORD
+DECLARE
+    TYPE REC_DEPT IS RECORD (
+        DEPTNO DEPT.DEPTNO%TYPE,
+        DNAME DEPT.DNAME%TYPE,
+        LOC DEPT.LOC%TYPE
+        
+    );
+    TYPE EX IS TABLE OF REC_DEPT
+    INDEX BY PLS_INTEGER;
+    RECS EX;
+    IDX PLS_INTEGER := 0;
+BEGIN
+    FOR I IN (SELECT * FROM DEPT) LOOP
+        IDX := IDX + 1;
+        RECS(IDX).DEPTNO := I.DEPTNO;
+        RECS(IDX).DNAME := I.DNAME;
+        RECS(IDX).LOC := I.LOC;
+        DBMS_OUTPUT.PUT_LINE(RECS(IDX).DEPTNO || RECS(IDX).DNAME ||  RECS(IDX).LOC);
+    END LOOP;
+END;
+/
+
+-- ROWTYPE
+DECLARE
+    TYPE EX IS TABLE OF DEPT%ROWTYPE
+    INDEX BY PLS_INTEGER;
+    RECS EX;
+    IDX PLS_INTEGER := 0;
+BEGIN
+    FOR I IN (SELECT * FROM DEPT) LOOP
+        IDX := IDX + 1;
+        RECS(IDX).DEPTNO := I.DEPTNO;
+        RECS(IDX).DNAME := I.DNAME;
+        RECS(IDX).LOC := I.LOC;
+        DBMS_OUTPUT.PUT_LINE(RECS(IDX).DEPTNO || RECS(IDX).DNAME ||  RECS(IDX).LOC);
+    END LOOP;
+END;
+/
+-- 복습
+DECLARE
+    TYPE EX IS TABLE OF DEPT%ROWTYPE
+    INDEX BY PLS_INTEGER;
+    RECS EX;
+    IDX PLS_INTEGER := 0;
+BEGIN
+    FOR I IN (SELECT * FROM DEPT) LOOP
+        IDX := IDX + 1;
+        RECS(IDX).DEPTNO := I.DEPTNO;
+        RECS(IDX).DNAME := I.DNAME;
+        RECS(IDX).LOC := I.LOC;
+        DBMS_OUTPUT.PUT_LINE(RECS(IDX).DEPTNO || RECS(IDX).DNAME ||  RECS(IDX).LOC);
+        DBMS_OUTPUT.PUT_LINE(RECS.COUNT || ' ' || RECS.FIRST || ' ' || RECS.LAST);
+    END LOOP;
+END;
+/
+
+
+```
+
+
+
+
+
+
+
+
 
 
 
