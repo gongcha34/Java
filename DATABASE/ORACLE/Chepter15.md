@@ -1,8 +1,9 @@
 # 사용자, 권한, 롤 관리
 ## 15-1~15-3 사용자, 권한, 롤 관리
 ### SYSTEM
-> 11G까지는 SYSTEMP 에서 CREATE USER ORACLSTUDY IDENTIFIED BY ORACLE;하면 사용자가 생성된다.
-+ 12C 이상부턴 에러 발생, 해결방법
+> 11G까지는 SYSTEM 에서 CREATE USER ORACLSTUDY IDENTIFIED BY ORACLE;하면 사용자가 생성된다.
+> 12C 이상부턴 오류가 발생한다
++ 해결방법
 ```
 -- 방법 1. ALTER SESSION SET "_ORACLE_SCRIPT"= TRUE;
 ALTER SESSION SET "_ORACLE_SCRIPT"= TRUE;
