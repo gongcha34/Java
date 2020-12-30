@@ -52,3 +52,100 @@ END;
 
 SELECT * FROM EMP;
 ```
+
+
+## 16-3 조건 제어문
+```
+DECLARE
+    V_NUMBER NUMBER := 14;
+BEGIN
+    IF(MOD(V_NUMBER, 2) = 1) THEN
+        DBMS_OUTPUT.PUT_LINE('odd number');
+    ELSE
+         DBMS_OUTPUT.PUT_LINE('even number');
+    END IF;
+END;
+/
+```
++ ELSIF
+```
+DECLARE
+    V_NUMBER NUMBER := 87;
+BEGIN
+    IF V_NUMBER >= 90 THEN
+        DBMS_OUTPUT.PUT_LINE('A GRADE');
+    ELSIF V_NUMBER >= 80 THEN
+         DBMS_OUTPUT.PUT_LINE('B GRADE');
+    ELSIF V_NUMBER >= 70 THEN
+        DBMS_OUTPUT.PUT_LINE('C GRADE');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('F GRADE');
+    END IF;
+END;
+/
+```
++ CASE문
+```
+DECLARE
+    V_NUMBER NUMBER := 87;
+BEGIN
+    CASE TRUNC(V_NUMBER /10)
+    WHEN 10 THEN DBMS_OUTPUT.PUT_LINE('A GRADE');
+    WHEN 9 THEN DBMS_OUTPUT.PUT_LINE('B GRADE');
+    WHEN 8 THEN DBMS_OUTPUT.PUT_LINE('C GRADE');
+    ELSE DBMS_OUTPUT.PUT_LINE('F GRADE');
+    END CASE;
+END;
+/
+```
++ LOOP문
+```
+DECLARE
+    V_NUMBER NUMBER := 0;
+BEGIN
+    LOOP
+        DBMS_OUTPUT.PUT_LINE('V_NUMBER : ' || V_NUMBER);
+        V_NUMBER := V_NUMBER + 1;
+        EXIT WHEN V_NUMBER > 4;
+    END LOOP;
+END;
+/
+```
++ WHILE LOOP
+```
+DECLARE
+    V_NUMBER NUMBER := 0;
+BEGIN
+    WHILE V_NUMBER < 4 LOOP
+        DBMS_OUTPUT.PUT_LINE('V_NUMBER : ' || V_NUMBER);
+        V_NUMBER := V_NUMBER + 1;
+    END LOOP;
+END;
+/
+
+-- FOR LOOP
+BEGIN
+    FOR I IN 0..4 LOOP
+        DBMS_OUTPUT.PUT_LINE('I : ' || I);
+    END LOOP;
+END;
+/
+
+BEGIN
+    FOR I IN REVERSE 0..4 LOOP
+        DBMS_OUTPUT.PUT_LINE('I : ' || I);
+    END LOOP;
+END;
+/
+```
++ CONTINUE
+```
+BEGIN
+    FOR I IN REVERSE 0..4 LOOP
+        CONTINUE WHEN MOD(I, 2) = 1;
+         DBMS_OUTPUT.PUT_LINE('I : ' || I);
+    END LOOP;
+END;
+/
+
+```
