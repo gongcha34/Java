@@ -348,7 +348,7 @@ BEGIN
     -- 커서로부터 읽어온 데이터 사용(Fetch)
     LOOP
         FETCH C1 INTO REC;
-        EXIT WHEN C1%NOTFOUND; -- C1이 NOTFOUND = TRUE 이면
+        EXIT WHEN C1%NOTFOUND; -- NOTFOUND는 FETCH문에서 행을 추출하면 FALSE, 추출하지 않으면 TRUE를 반환
         DBMS_OUTPUT.PUT_LINE(REC.DEPTNO || REC.DNAME ||  REC.LOC);
     END LOOP;
     -- 커서 닫기(Close)
