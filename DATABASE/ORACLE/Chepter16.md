@@ -326,6 +326,7 @@ END;
 ```
 
 # 18. 커서와 예외 처리
+## 커
 + 단일행
 ```
 DECLARE
@@ -453,6 +454,21 @@ BEGIN
 END;
 /
 ```
+## 예외처리
+```
+SET SERVEROUTPUT ON;
+DECLARE
+    V_WRONG NUMBER;
+BEGIN
+    -- DNAME과 V_WRONG은 자료형이 다르다.
+    SELECT DNAME INTO V_WRONG
+    FROM DEPT WHERE DEPTNO = 10;
+EXCEPTION
+    WHEN VALUE_ERROR THEN
+        DBMS_OUTPUT.PUT_LINE('예외 처리 : 수치 또는 값 오류 발생2');
+END;
+/
+```
 
 
 
@@ -462,8 +478,5 @@ END;
 
 
 
-
-
-
-
-
+# Re
+[DO IT! 오라클로 배우는 데이터베이스 입문]()
