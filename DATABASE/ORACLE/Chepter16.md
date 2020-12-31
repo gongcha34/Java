@@ -326,7 +326,6 @@ END;
 ```
 
 # 18. 커서와 예외 처리
-## 커
 + 단일행
 ```
 DECLARE
@@ -338,7 +337,7 @@ BEGIN
 END;
 /
 ```
-+ 커서
+## 커서
 ```
 DECLARE
     CURSOR C1 IS (SELECT * FROM DEPT);
@@ -473,10 +472,5 @@ END;
 
 
 
-
-
-
-
-
-# Re
-[DO IT! 오라클로 배우는 데이터베이스 입문]()
+# *Reference
++ [오라클로 배우는 데이터베이스 입문](http://www.yes24.com/Product/Goods/65849798)
