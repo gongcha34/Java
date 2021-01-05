@@ -40,7 +40,26 @@ CREATE USER SUN2 IDENTIFUED BY 1234;
 GRANT MYROLE TO SUN2;
 
 ```
++ 사용자 롤 생성과 권한 부여
+```
+-- 오라클 12c로 넘어오면서 계정이름 앞에 c##을 붙여줘야 공통 사용자를 생성가능 하다.
+-- 유저 할당 OK, 접속권한은 없음
+create user c##orclstudy identified by oracle; 
+-- 비밀번호 변경
+alter user c##orclstudy identified by oracle1;
+-- 권한 부여
+grant create session to c##orclstudy;
+grant resource, create session, create table to c##orclstudy;
+-- 롤 생성
+create role c##myrole;
+-- 롤 권한 부여
+grant resource, create session, create table to c##myrole;
 
+-- 연습하기
+create user c##myuser2 identified by oracel2;
+grant c##myrole to c##myuser2;
+select * from all_users;
+```
 
 ### 19C (SCOTT)
 >  SUN 계정에 EMP 테이블 접근 권한을 줌
