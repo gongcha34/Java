@@ -18,7 +18,7 @@ public class Main {
 			// word 데이터베이스 + 타임존 추가하기 8.0에러 해결방법(?serverTimezone=UTC)
 			String driverURL = "jdbc:mysql://localhost:3306/world?serverTimezone=UTC";
 			
-			conn = DriverManager.getConnection(driverURL,"root","1234");
+			conn = DriverManager.getConnection(driverURL,"root","비밀번호");
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("SELECT name, countrycode, district, population FROM city");
 			
