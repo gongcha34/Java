@@ -1,3 +1,5 @@
+1. MySql JDBC 생성하기
+```
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -47,3 +49,4 @@ public class Main {
 		
 	}
 }
+```
