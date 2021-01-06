@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 
 
 public class Main {
@@ -16,8 +15,8 @@ public class Main {
 		ResultSet rs = null;
 		
 		try {
-
-			String driverURL = "jdbc:mysql://localhost:3306/world?serverTimezone=UTC"; // word 데이터베이스 + 타임존 추가하기 8.0에러 해결방법(?serverTimezone=UTC)
+			// word 데이터베이스 + 타임존 추가하기 8.0에러 해결방법(?serverTimezone=UTC)
+			String driverURL = "jdbc:mysql://localhost:3306/world?serverTimezone=UTC";
 			
 			conn = DriverManager.getConnection(driverURL,"root","1234");
 			stmt = conn.createStatement();
