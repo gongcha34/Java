@@ -46,6 +46,26 @@ public final class OptionalInt {
 	...
 }
 ```
+> OptionalInt의 값 가져오기 - int getAsInt()
+| Optional클래스 | 값을 반환하는 메서드 | 
+|---|:---:|
+| `Optinal` | T get() | 
+| `OptionalInt` | int getAsInt() |
+| `OptionalLong` | long getAsLong() |
+| `OptionalDouble` | double getAsDouble() |
+
+> 빈 Optional 객체와의 비교
+```
+OptionalInt opt = Optional.of(0);
+OptionalInt opt = Optional.empty(); // 아무것도 저장 안해도 기본값이 0
+```
+구별할 때 isPresent() 사용하면 된다!
+
+```
+System.out.println(opt.isPresent()); //true
+System.out.println(opt2.isPresent()); //false
+System.out.println(opt.equals(opt2)); //false
+```
 
 # *Reference
 + [자바의 정석]
