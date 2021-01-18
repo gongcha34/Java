@@ -7,7 +7,7 @@ public final class Optional<T> {
 	privata final T value; // T타입의 참조 변수
 	...
 }
-``
+```
 
 ### Optional<T> 객체 생성하기
 ```
