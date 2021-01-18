@@ -47,6 +47,7 @@ public final class OptionalInt {
 }
 ```
 > OptionalInt의 값 가져오기 - int getAsInt()
+
 | Optional클래스 | 값을 반환하는 메서드 | 
 |---|:---:|
 | `Optinal` | T get() | 
