@@ -94,5 +94,11 @@
 ArrayList: 읽기(빠르다), 추가/삭제(느리다), 비고: 순차적인 추가삭제는 더 빠름, 비효울적인 메모리 사용
 LinkedList: 읽기(느리다), 추가/삭제(빠르다), 비고: 데이터가 많을수록 접근성이 떨어짐.
 
+## Iterator, ListIterator, Enumeration
+> 컬렉션에 저장된 요소를 접근하는데 사용되는 인터페이스
+
++ Enumeration : Iterator의 구버전
++ ListIterator : Iterator의 양방향 조회기능 추가(List를 구현한 경우만 사용가능)
+
 # *Reference
 + [자바의 정석]
