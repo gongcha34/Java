@@ -49,11 +49,12 @@ C:\javaex>java IntegerTest // 실행
 
 ## 4. 바이트코드란 무엇인가
 
-- java byte code(.class)란 JVM이 이해할 수 있는 언어로 변환된 자바 소스 코드를 의미합니다. 자바 컴파일러에 의해 변환되는 코드의 명령어 크기가 1바이트라서 java byte code라고 불리고 있습니다.
+- java byte code(.class)란 JVM이 이해할 수 있는 언어로 변환된 자바 소스 코드를 의미합니다. 
+자바 컴파일러에 의해 변환되는 코드의 명령어 크기가 1바이트라서 java byte code라고 불리고 있습니다.
 
 ## 5. JIT 컴파일러란 무엇이며 어떻게 동작하는가?
 
-- JIT 컴파일(just-in-time compilation) 또는 동적 번역(dynamic translation)은 프로그램을 실제 실행하는 시점에 기계어로 번역하는 컴파일 기법이다.
+- JIT 컴파일(just-in-time compilation) 또는 동적 번역(dynamic translation)은 프로그램을 실제 실행하는 시점에 기계어로 번역하는 컴파일 기법입니다.
 
 ## 6. JVM 구성 요소
 
