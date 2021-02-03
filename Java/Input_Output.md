@@ -69,3 +69,7 @@ FileOutputStream fis = new FileOutputStream("C:/Temp/data.txt",true);
 FileOutputStream fis = FileOutputStream(file, true);
 ```
 - OutputStream 하위 클래스이므로 사용 방법이 OutputStream 과 동일
+
+# 참조
+- 자바의 정석
+- 이것이자바다
