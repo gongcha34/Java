@@ -47,3 +47,25 @@ FileInputStream fis = new FileInputStream(file);
 - 만약 파일이 존재하지 않으면 FileNotFoundException 발생
 - try-catch문으로 예외 처리 해야함.
 - InputStream 하위 클래스이므로 사용 방법이 InputStream 과 동일
+
+## FileOutputStream
+
+- 파일로부터 바이트 단위로 읽어 들일 때 사용
+- 그림, 오디오, 비디오, 텍스트 파일등 모든 종류의 파일로 저장할 수 있다.
+
+```
+// 첫번째 방법
+FileOutputStream fis = new FileOutputStream("C:/Temp/image.gif");
+// 두번째 방법
+File file = new File("C:/Temp/image.gif");
+FileOutputStream fis = new FileOutputStream(file);
+
+```
+
+- 파일이 이미 존재할 경우, 데이터를 출력하게 되면 파일을 덮어쓰게 됨.
+- 기존 파일 내용 끝에 데이터를 추가할 경우
+```
+FileOutputStream fis = new FileOutputStream("C:/Temp/data.txt",true);
+FileOutputStream fis = FileOutputStream(file, true);
+```
+- OutputStream 하위 클래스이므로 사용 방법이 OutputStream 과 동일
