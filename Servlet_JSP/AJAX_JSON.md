@@ -20,11 +20,23 @@ dataType: 'json, xml, script, text 또는 html',
 # JSON
 > 자바스크립트의 객체 표현식과 유사한 방식으로 데이터를 주고 받는 방법이다.
 ```
-{
-  "users": [
-    {"name": "Alice", "age": 10, "gender": "female"},
-    {"name": "Bob", "age": 42, "gender": "male"},
-    {"name": "Chris", "age": 21, "gender": "male"}
-  ]
-}
+List<String> l = new ArrayList<>(); 
+	l.add("apple");
+	l.add("banana");
+	l.add("calamansi");
+
+	List<String> l2 = new ArrayList<>(); 
+	l2.add("durian");
+	l2.add("eggplant");
+	l2.add("fig");
+
+	List<List<String>> l3 = new ArrayList<>();
+	l3.add(l);
+	l3.add(l2);
+	
+	Gson gson = new Gson();
+	String json = gson.toJson(l3);
+	//String json2 = gson.toJson(l2);
+	
+	out.print(json);
 ```
