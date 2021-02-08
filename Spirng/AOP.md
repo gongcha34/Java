@@ -4,7 +4,7 @@
 어떤 로직을 기준으로 업무로직(Core Concern), 공통적인 로직(Cross-cutting Concern)으로 나누어서 보고 그 관점을 기준으로 각각 모듈화한다.
 * 모듈화란 어떤 공통된 로직이나 기능을 하나의 단위로 묶는 것을 말한다. 
 
-![Uploading 20210208_211009.png…]()
+![20210208_211009](https://user-images.githubusercontent.com/66931142/107219264-2bd35780-6a54-11eb-91bb-45e03fb997e5.png)
 
 ```
 public static void main(String[] args) {
