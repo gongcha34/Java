@@ -3,6 +3,7 @@
 
 Controller(@MVC)나 폼 클래스(커맨드 클래스) 작성시에 특정 클래스를 상속받거나 참조할 필요 없이 POJO 나 POJO-  style의 클래스를 작성함으로써 비지니스 로직에 집중한 코드를 작성할 수 있다.
 
+![20210216_204231](https://user-images.githubusercontent.com/66931142/108058989-2ac7a900-7098-11eb-884a-19af013cfcd7.png)
 
 
 + DispacherServlet : 클라이언트의 요청(request)를 전달 받아, 컨트롤러에게 전달하고, 컨트롤러가 리턴한 결과 값을 view에 전달하여 알맞은 응답을 생성하도록 한다.
