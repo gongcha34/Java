@@ -23,6 +23,7 @@ Controller(@MVC)나 폼 클래스(커맨드 클래스) 작성시에 특정 클�
 ## Annotation
 + @Controller : 해당 클래스가 Controller임을 명시
 + @RequestMapping : 요청에 대해 어떤 Controller, 어떤 메소드가 처리할지를 맵핑
+     + @GepMapping, @PostMapping (Spring 4.3 이후 부터 도입)  
 + @RequestParam : Controller 메소드의 파라미터와 웹요청 파라미터와 맵핑
 + @ModelAttribute : Controller 메소드의 파라미터나 리턴값을 Model 객체와 바인딩
 + @SessionAttributes : Model 객체를 세션에 저장하고 사용
