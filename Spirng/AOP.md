@@ -24,7 +24,7 @@ public static void main(String[] args) {
 	)
 }
 ```
-# AOP 주요용어
+## AOP 주요용어
 + Advice : 언제 공통 관심 기능을 핵심 로직에 적용할 지를 정의한다.
 + Joinpoint : Advice를 적용 가능한 지점. 메서드 호출, 필드 값 변경 등 Joinpoint에 해당한다.
 + Pointcut : Joinpoint의 부분 집합으로서 실제로 Advice가 적용되는 Joinpoint를 나타낸다. 
