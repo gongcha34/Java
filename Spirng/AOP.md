@@ -32,5 +32,5 @@ public static void main(String[] args) {
 
 
 # *Reference
- [뉴렉처](https://www.youtube.com/watch?v=y2JkXjOocZ4&list=PLq8wAnVUcTFUHYMzoV2RoFoY2HDTKru3T&index=18)
- [새로비](https://engkimbs.tistory.com/746)
+ + [뉴렉처](https://www.youtube.com/watch?v=y2JkXjOocZ4&list=PLq8wAnVUcTFUHYMzoV2RoFoY2HDTKru3T&index=18)
+ + [새로비](https://engkimbs.tistory.com/746)
